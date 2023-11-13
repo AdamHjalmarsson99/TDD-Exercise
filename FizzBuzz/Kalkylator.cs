@@ -5,6 +5,7 @@
         public static void FizzBuzzKalkyl(int nummer)
         {
             throw new NotImplementedException();
+            Console.WriteLine("Test");
         }
     }
 }
