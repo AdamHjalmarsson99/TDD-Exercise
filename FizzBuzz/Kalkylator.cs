@@ -22,5 +22,25 @@
         {
             Console.WriteLine(FizzBuzzKalkyl(number));
         }
+
+        public static void LogMessageFromUserInput()
+        {
+            Console.Write("Enter a number: ");
+
+            try
+            {
+                int number = int.Parse(Console.ReadLine());
+
+                // Perform FizzBuzz logic
+                string result = FizzBuzzKalkyl(number);
+
+                // Log the result
+                Console.WriteLine(result);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
     }
 }
