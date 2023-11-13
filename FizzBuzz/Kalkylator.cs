@@ -18,15 +18,9 @@
                 return number.ToString();
         }
 
-        public static int FizzBuzzCalculatorOutput(int number)
+        public static void LogMessage(int number)
         {
-            return number;
-        }
-
-        public void LogMessage(int number)
-        {
-            string message = FizzBuzzKalkyl(number);
-            Console.WriteLine($"{message}");
+            Console.WriteLine(FizzBuzzKalkyl(number));
         }
     }
 }

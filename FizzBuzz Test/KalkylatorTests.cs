@@ -1,4 +1,5 @@
 using FizzBuzz;
+using System.ComponentModel.DataAnnotations;
 
 namespace FizzBuzz_Test
 {
@@ -24,27 +25,22 @@ namespace FizzBuzz_Test
         }
 
         [TestMethod]
-        [DataRow(1)]
-        [DataRow(2)]
-        [DataRow(3)]
-        [DataRow(4)]
-        public void FizzBuzzKalkylOutput(int randomNumber)
+        [DataRow(25, "Buzz")]
+        [DataRow(30, "FizzBuzz")]
+        [DataRow(35, "Buzz")]
+        [DataRow(9, "Fizz")]
+        public void LogMessage_WritesMessageToConsole(int randomNumber, string expectedString)
         {
-            int result = Kalkylator.FizzBuzzCalculatorOutput(randomNumber);
-
-            Assert.AreEqual(randomNumber, result);
-        }
-
-        [TestMethod]
-        public void LogMessage_WritesMessageToConsole()
-        {
+            //Arrange
             StringWriter stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
-            var expected = "Service AuthService: Login successful";
+            var expected = expectedString;
 
-            LogMessage("AuthService", "Login successful");
+            //Act
+            Kalkylator.LogMessage(randomNumber);
             var actuall = stringWriter.ToString().Trim();
 
+            //Assert
             Assert.AreEqual(expected, actuall);
         }
     }
