@@ -17,5 +17,18 @@ namespace FizzBuzz_Test
 
             // Testet kommer att bli grönt då ett NotImplementedException kastas
         }
+
+        [TestMethod]
+        public void När_FizzBuzzKalkyl_Retrurnerar_Valid_Nummer()
+        {
+            // Arrange
+            int randomNummer = 9;
+
+            // Act
+            string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
+
+            // Assert
+            Assert.AreEqual("Fizz", result);
+        }
     }
 }
