@@ -3,24 +3,30 @@
     public class Kalkylator
     {
         
-        public static string FizzBuzzKalkyl(int nummer)
+        public static string FizzBuzzKalkyl(int number)
         {
-            if (nummer % 3 == 0 && nummer % 5 == 0)
+            if (number % 3 == 0 && number % 5 == 0)
                 return "FizzBuzz";
 
-            else if (nummer % 5 == 0)
+            else if (number % 5 == 0)
                 return "Buzz";
 
-            else if (nummer % 3 == 0)
+            else if (number % 3 == 0)
                 return "Fizz";
 
             else
-                return nummer.ToString();
+                return number.ToString();
         }
 
-        public static string FizzBuzzKalkylResultat(int nummer)
+        public static int FizzBuzzCalculatorOutput(int number)
         {
-            return nummer.ToString();
+            return number;
+        }
+
+        public void LogMessage(int number)
+        {
+            string message = FizzBuzzKalkyl(number);
+            Console.WriteLine($"{message}");
         }
     }
 }
