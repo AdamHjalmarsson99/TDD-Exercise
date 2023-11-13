@@ -19,20 +19,20 @@ namespace FizzBuzz_Test
         //}
 
         [TestMethod]
-        [DataRow]
-        [DataRow]
-        [DataRow]
-        [DataRow]
-        public void När_FizzBuzzKalkyl_Retrurnerar_Valid_Nummer()
+        [DataRow(25,"Buzz")]
+        [DataRow(30,"FizzBuzz")]
+        [DataRow(35,"Buzz")]
+        [DataRow(9,"Fizz")]
+        public void När_FizzBuzzKalkyl_Retrurnerar_Valid_Nummer(int randomNummer, string expectedstring)
         {
             // Arrange
-            int randomNummer = 25;
+            //int randomNummer = 25;
 
             // Act
             string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
 
             // Assert
-            Assert.AreEqual("Buzz", result);
+            Assert.AreEqual(expectedstring, result);
         }
     }
 }
