@@ -36,7 +36,7 @@
             }
             else
             {
-                throw new ArgumentException("Invalid input. Please enter a valid number.");
+                throw new ArgumentException($"{number} is not a valid number. Please enter a valid number.");
             }
         }
 
