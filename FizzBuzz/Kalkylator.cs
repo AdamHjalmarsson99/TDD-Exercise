@@ -25,22 +25,20 @@
 
         public static void LogMessageFromUserInput()
         {
-            Console.Write("Enter a number: ");
+            // Console.Write("Enter a number: ");
+            string userInput = Console.ReadLine();
 
-            try
+            if (int.TryParse(userInput, out int number))
             {
-                int number = int.Parse(Console.ReadLine());
-
-                // Perform FizzBuzz logic
                 string result = FizzBuzzKalkyl(number);
 
-                // Log the result
                 Console.WriteLine(result);
             }
-            catch (FormatException)
+            else
             {
-                Console.WriteLine("Invalid input. Please enter a valid number.");
+                throw new ArgumentException("Invalid input. Please enter a valid number.");
             }
         }
+
     }
 }
