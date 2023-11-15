@@ -2,20 +2,24 @@
 {
     public class Kalkylator
     {
-        
+
         public static string FizzBuzzKalkyl(int number)
         {
-            if (number % 3 == 0 && number % 5 == 0)
-                return "FizzBuzz";
+            string result = "";
 
-            else if (number % 5 == 0)
-                return "Buzz";
+            if (number % 3 == 0)
+                result += "Fizz";
 
-            else if (number % 3 == 0)
-                return "Fizz";
+            if (number % 5 == 0)
+                result += "Buzz";
 
-            else
-                return number.ToString();
+            if (number % 7 == 0)
+                result += "Whizz";
+
+            if (number % 11 == 0)
+                result += "Bang";
+
+            return string.IsNullOrEmpty(result) ? number.ToString() : result;
         }
 
         public static void LogMessage(int number)

@@ -1,4 +1,5 @@
 using FizzBuzz;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FizzBuzz_Test
 {
@@ -64,7 +65,7 @@ namespace FizzBuzz_Test
         {
             get
             {
-                for (int i = 1; i <= 15; i++)
+                for (int i = 1150; i <= 1160; i++)
                 {
                     string result = "";
 
@@ -73,6 +74,12 @@ namespace FizzBuzz_Test
 
                     if (i % 5 == 0)
                         result += "Buzz";
+
+                    if (i % 7 == 0)
+                        result += "Whizz";
+
+                    if (i % 11 == 0)
+                        result += "Bang";
 
                     yield return new object[] { i, result.Length == 0 ? i.ToString() : result };
                 }
