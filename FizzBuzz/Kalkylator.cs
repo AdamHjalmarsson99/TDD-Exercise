@@ -33,15 +33,9 @@
             string userInput = Console.ReadLine();
 
             if (int.TryParse(userInput, out int number))
-            {
-                string result = FizzBuzzKalkyl(number);
-
-                Console.WriteLine(result);
-            }
+                LogMessage(number);
             else
-            {
                 throw new ArgumentException($"{number} is not a valid number. Please enter a valid number.");
-            }
         }
 
     }
